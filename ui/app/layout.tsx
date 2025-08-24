@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
+import Header from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,7 +48,8 @@ export default function RootLayout({
             "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
           )}
         />
-        <main className="relative z-10">
+        <Header />
+        <main className="relative z-10 mx-auto px-96 py-12">
           {children}
         </main>
       </body>
