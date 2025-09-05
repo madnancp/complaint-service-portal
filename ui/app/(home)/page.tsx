@@ -1,9 +1,9 @@
-import { Textarea } from "@/components/ui/textarea";
+import Hero from "./_components/Hero";
 
 export default function Home() {
   return (
-    <div className="">
-      <Textarea placeholder="Enter something" className="bg-white/10 backdrop-blur-lg"></Textarea>
+    <div className="min-h-screen">
+      <Hero />
     </div>
   );
 }

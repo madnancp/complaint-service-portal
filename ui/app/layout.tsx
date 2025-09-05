@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen w-full overflow-hidden bg-background">
+      <body className="relative w-full min-h-screen bg-background overflow-x-hidden">
         <GridPattern
           squares={[
             [4, 4],
@@ -45,14 +45,14 @@ export default function RootLayout({
           ]}
           className={cn(
             "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+            "fixed inset-0 h-full w-full -z-10",
           )}
         />
         <Header />
-        <main className="relative z-10 mx-auto px-96 py-12">
+        <main className="relative px-6 lg:px-36">
           {children}
         </main>
       </body>
-    </html >
+    </html>
   );
 }
