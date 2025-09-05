@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { GridPattern } from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins"
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Complaint Service Portal",
@@ -27,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="relative w-full min-h-screen bg-background overflow-x-hidden">
+      <body className={`relative w-full min-h-screen bg-background overflow-x-hidden ${poppins.className} antialiased`}>
         <GridPattern
           squares={[
             [4, 4],
@@ -53,6 +50,6 @@ export default function RootLayout({
           {children}
         </main>
       </body>
-    </html>
+    </html >
   );
 }
